@@ -1,0 +1,45 @@
+.stage {
+	width:300px; 
+	float:left; 
+	padding:10px; 
+	border:2px dotted black;
+}
+
+.buildCard {
+	width:300px; 
+	float:left; 
+	padding:10px; 
+	border:2px dashed blue;
+}
+
+.firstColumn {
+	width:100px; 
+	border-width:0px;
+	float:left;
+	padding:10px;
+}
+
+.building {
+	border:1px solid red;
+}
+
+.non-building {
+	border:1px solid blue;
+}
+
+.odd-pipeline {
+	background-color : #eee;
+	border: 19px solid red;
+}
+
+.vertical-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.horizontal-separator, .header-horizontal-separator {
+	clear:both; 
+	border:3px dashed #ddd; 
+	margin-bottom:20px;
+}
