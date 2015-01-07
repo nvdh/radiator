@@ -1,7 +1,7 @@
 # radiator
 Super simple slick single page jenkins build radiator with json configuration.
 
-## Quick Installation
+## Quick Install
 
 - Download from github: git clone https://github.com/nvdh/radiator.git
 - Add builds in config.json
