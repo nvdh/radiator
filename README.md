@@ -1,6 +1,8 @@
 # radiator
 Super simple slick single page jenkins build radiator with json configuration.
 
+The builds are displayed in a grid with headers for the columns and the rows. E.g. you can use a row or pipeline per product and use a column per release. Each cell can contain multiple builds.
+
 ## Quick Install
 
 - Download from github: git clone https://github.com/nvdh/radiator.git
