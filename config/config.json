@@ -1,0 +1,37 @@
+[
+      {
+        "title" : "PRODUCT X",
+        "jobs" : {
+          "Rel. 1" : [
+                      { "jobName" : "X.2015R1.UNITTEST", "displayName" : "UNIT"},
+                      { "jobName" : "X.2015R1.INTEGRATIONTEST", "displayName" : "INTEGRATION"},
+                      { "jobName" : "X.2015R1.WEBDRIVERTEST.PART1,X.2015R1.WEBDRIVERTEST.PART2,X.2015R1.WEBDRIVERTEST.PART3,X.2015R1.WEBDRIVERTEST.PART4", "displayName" : "UI"},
+                      { "jobName" : "X.2015R1.JMETER", "displayName" : "PERFORMANCE", "failCount" : "2", "skipCount" : "0"}
+                    ],
+          "Rel. 2" : [
+                      { "jobName" : "X.2015R1.UNITTEST", "displayName" : "UNIT"},
+                      { "jobName" : "X.2015R1.INTEGRATIONTEST", "displayName" : "INTEGRATION"},
+                      { "jobName" : "X.2015R1.WEBDRIVERTEST.PART1,X.2015R1.WEBDRIVERTEST.PART2,X.2015R1.WEBDRIVERTEST.PART3,X.2015R1.WEBDRIVERTEST.PART4", "displayName" : "UI"},
+                      { "jobName" : "X.2015R1.JMETER", "displayName" : "PERFORMANCE"}
+                    ]
+        }
+      },
+
+      {
+        "title" : "PRODUCT Y",
+        "jobs" : {
+          "Rel. 1"    : [
+                      { "jobName" : "Y.REL2015R1.UNITTEST", "displayName" : "UNIT"},
+                      { "jobName" : "Y.REL2015R1.INTEGRATIONTEST", "displayName" : "INTEGRATION"},
+                      { "jobName" : "Y.REL2015R1.WEBDRIVERTEST", "displayName" : "UI"},
+                      { "jobName" : "Y.REL2015R1.JMETER", "displayName" : "PERFORMANCE"}
+                    ],
+          "Rel. 2"    : [
+                      { "jobName" : "Y.REL2015R1.UNITTEST", "displayName" : "UNIT"},
+                      { "jobName" : "Y.REL2015R1.INTEGRATIONTEST", "displayName" : "INTEGRATION"},
+                      { "jobName" : "Y.REL2015R1.WEBDRIVERTEST", "displayName" : "UI"},
+                      { "jobName" : "Y.REL2015R1.JMETER", "displayName" : "PERFORMANCE"}
+                    ]
+        }
+      }
+]
