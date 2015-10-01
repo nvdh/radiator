@@ -15,6 +15,14 @@ Disable web-security if your jenkins is on a different domain
 
     C:\Program Files (x86)\Google\Chrome\Application>chrome.exe --disable-web-security
 
+On Mac
+
+open -a Google\ Chrome --args --disable-web-security
+
+On Linux
+
+$ google-chrome --disable-web-security
+
 ## Example json config
 ```json
 [

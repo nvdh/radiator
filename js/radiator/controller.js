@@ -1,17 +1,20 @@
 angular.module('radiator').controller('RadiatorController', function($scope, $http, $interval, fetchMultipleAndMerge) {
 
-    $scope.url = "http://sv-arg-bld-d2:8083/jenkins/";
-    $scope.stages = ['R1','Nazorg'];
+    $scope.url = "http://jenkins.rel.corp.telenet.be/jenkins.1.584/job/eDev_Care_MT/job/ocapi-core/";
+    $scope.stages = ['15.2','15.3'];
     $scope.pipelines = [];
+    $scope.servers = [];
     
     $http.get('config/config.json').then(function(res){
-     $scope.pipelines = res.data;
+     $scope.pipelines = res.data.products;
+     $scope.stages = res.data.releases;
+     $scope.servers = res.data.servers;
      $scope.refresh();
     });
 
     $scope.startFetching = function() {
       $scope.refresh();
-      $interval($scope.refresh, 5000);
+      $interval($scope.refresh, 10000);
     };
 
     $scope.fetch = function($job) {
@@ -69,9 +72,29 @@ angular.module('radiator').controller('RadiatorController', function($scope, $ht
     }
 
     $scope.fetchSingle = function($job){
-      var url = $scope.url + "/job/" + $job.jobName + "/lastBuild/api/json";
 
-      $http.get(url).
+      $server = $scope.servers[$job.server];
+
+      var url = $server.url + "/" + $job.path + "/job/" + $job.jobName + "/lastBuild/api/json";
+
+      console.log("In fetchSingle");
+
+      //$http.defaults.headers.common.Authorization = "Basic " + btoa("nvanderh:4758c085e4c4874ac6c28dceb4d09163");
+      //$http.defaults.headers.common["Content-Type"] = "text/plain";
+
+      $http.defaults.useXDomain = true;
+      delete $http.defaults.headers.common['X-Requested-With'];
+
+      var config = {
+        headers:  {
+          "Content-Type" : "application/json"
+          //'Authorization': "Basic " + btoa("nvanderh:4758c085e4c4874ac6c28dceb4d09163")
+        },
+        method : "GET",
+        withCredentials: true
+      };
+
+      $http.get(url, config).
           success(function(data, status, headers, config) {
             if (typeof data.result !== 'undefined' && data.result != null && data.result != "null"){
               $job.status = data.result;

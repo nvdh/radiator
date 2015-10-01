@@ -1,37 +1,73 @@
-[
+{
+"servers" : { 
+      "jenkins-telenet" : {
+          "url"   : "http://jenkins.rel.corp.telenet.be/jenkins.1.584",
+          "user"  : "nvadenderh",
+          "token" : "4758c085e4c4874ac6c28dceb4d09163"
+        },
+      "jenkins-cegeka" : {
+          "url"  : "http://213.224.146.193/jenkins.1.584"
+        }
+    },
+  "releases" : ["15.20", "15.30"],
+  "products" : [
       {
-        "title" : "PRODUCT X",
+        "title" : "OCAPI",
         "jobs" : {
-          "Rel. 1" : [
-                      { "jobName" : "X.2015R1.UNITTEST", "displayName" : "UNIT"},
-                      { "jobName" : "X.2015R1.INTEGRATIONTEST", "displayName" : "INTEGRATION"},
-                      { "jobName" : "X.2015R1.WEBDRIVERTEST.PART1,X.2015R1.WEBDRIVERTEST.PART2,X.2015R1.WEBDRIVERTEST.PART3,X.2015R1.WEBDRIVERTEST.PART4", "displayName" : "UI"},
-                      { "jobName" : "X.2015R1.JMETER", "displayName" : "PERFORMANCE", "failCount" : "2", "skipCount" : "0"}
+          "15.20" : [
+                      { "displayName" : "PUBLIC",    "jobName" : "ocapi-15.20",           "path" : "job/eDev_Care_MT/job/ocapi",           "server" : "jenkins-telenet"},
+                      { "displayName" : "PROVISION", "jobName" : "ocapi-provision-15.20", "path" : "job/eDev_Care_MT/job/ocapi-provision", "server" : "jenkins-telenet"},
+                      { "displayName" : "CORE",      "jobName" : "ocapi-core-15.20",      "path" : "job/eDev_Care_MT/job/ocapi-core",      "server" : "jenkins-telenet"},
+                      { "displayName" : "SECURITY",  "jobName" : "ocapi-security-15.20",  "path" : "job/eDev_Care_MT/job/ocapi-security",  "server" : "jenkins-telenet"}
                     ],
-          "Rel. 2" : [
-                      { "jobName" : "X.2015R1.UNITTEST", "displayName" : "UNIT"},
-                      { "jobName" : "X.2015R1.INTEGRATIONTEST", "displayName" : "INTEGRATION"},
-                      { "jobName" : "X.2015R1.WEBDRIVERTEST.PART1,X.2015R1.WEBDRIVERTEST.PART2,X.2015R1.WEBDRIVERTEST.PART3,X.2015R1.WEBDRIVERTEST.PART4", "displayName" : "UI"},
-                      { "jobName" : "X.2015R1.JMETER", "displayName" : "PERFORMANCE"}
+          "15.30" : [
+                      { "displayName" : "PUBLIC",    "jobName" : "ocapi-15.30",           "path" : "job/eDev_Care_MT/job/ocapi",           "server" : "jenkins-telenet"},
+                      { "displayName" : "PROVISION", "jobName" : "ocapi-provision-15.30", "path" : "job/eDev_Care_MT/job/ocapi-provision", "server" : "jenkins-telenet"},
+                      { "displayName" : "CORE",      "jobName" : "ocapi-core-15.30",      "path" : "job/eDev_Care_MT/job/ocapi-core",      "server" : "jenkins-telenet"},
+                      { "displayName" : "SECURITY",  "jobName" : "ocapi-security-15.30",  "path" : "job/eDev_Care_MT/job/ocapi-security",  "server" : "jenkins-telenet"}
                     ]
         }
       },
-
       {
-        "title" : "PRODUCT Y",
+        "title" : "MT",
         "jobs" : {
-          "Rel. 1"    : [
-                      { "jobName" : "Y.REL2015R1.UNITTEST", "displayName" : "UNIT"},
-                      { "jobName" : "Y.REL2015R1.INTEGRATIONTEST", "displayName" : "INTEGRATION"},
-                      { "jobName" : "Y.REL2015R1.WEBDRIVERTEST", "displayName" : "UI"},
-                      { "jobName" : "Y.REL2015R1.JMETER", "displayName" : "PERFORMANCE"}
+          "15.20" : [
+                      { "displayName" : "MIJN TELENET", "jobName" : "mijntelenet-15.20", "path" : "job/eDev_Care_MT/job/mijntelenet", "server" : "jenkins-telenet"}
                     ],
-          "Rel. 2"    : [
-                      { "jobName" : "Y.REL2015R1.UNITTEST", "displayName" : "UNIT"},
-                      { "jobName" : "Y.REL2015R1.INTEGRATIONTEST", "displayName" : "INTEGRATION"},
-                      { "jobName" : "Y.REL2015R1.WEBDRIVERTEST", "displayName" : "UI"},
-                      { "jobName" : "Y.REL2015R1.JMETER", "displayName" : "PERFORMANCE"}
+          "15.30" : [
+                      { "displayName" : "MIJN TELENET", "jobName" : "mijntelenet-15.30", "path" : "job/eDev_Care_MT/job/mijntelenet", "server" : "jenkins-telenet"}
+                    ]
+        }
+      },
+      {
+        "title" : "MC",
+        "jobs" : {
+          "15.20" : [
+                      { "displayName" : "MATCH CENTER", "jobName" : "matchcenter-streaming-api-15.20", "path" : "job/eDev_Care_MT/job/matchcenter-streaming-api", "server" : "jenkins-telenet"}
+                    ],
+          "15.30" : [
+                    ]
+        }
+      },
+      {
+        "title" : "OAUTH",
+        "jobs" : {
+          "15.20" : [
+                      { "displayName" : "OAUTH", "jobName" : "oauth-develop", "path" : "job/eDev_Care_MT/job/oauth", "server" : "jenkins-telenet"}
+                    ],
+          "15.30" : [
+                    ]
+        }
+      },
+      {
+        "title" : "TELEGATE",
+        "jobs" : {
+          "15.20" : [
+                      { "displayName" : "TELEGATE", "jobName" : "telegate-15.20", "path" : "job/eDev_Care_MT/job/telegate", "server" : "jenkins-telenet"}
+                    ],
+          "15.30" : [
                     ]
         }
       }
-]
+  ]
+}

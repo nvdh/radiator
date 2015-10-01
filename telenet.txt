@@ -1,0 +1,16 @@
+
+Start met chrome --disable-web-security
+
+Log in in Jenkins in Chrome
+
+Works as a charm.
+
+
+chrome --disable-web-security
+
+or 
+
+--allow-file-access-from-files --allow-file-access --allow-cross-origin-auth-prompt
+
+
+
